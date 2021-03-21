@@ -102,6 +102,8 @@ const chosenCharArray = [];
 
 //Generate Password 
 function generatePassword() {
+  const passwordArray = []
+
   let passwordLength = prompt("Whats is the length of your password?");
   console.log(passwordLength);
 
@@ -134,6 +136,7 @@ function generatePassword() {
   else
     alert("Password needs to be between 8 and 128!");
 
+  // If statements to Confirm Arrays
   if (isLowerCase) {
       chosenCharArray.push(lowerCaseArray);
     } 
@@ -149,10 +152,19 @@ function generatePassword() {
   if (!lowerCaseArray && !isUpperCase && !isNumericChar && !isSpecialChar) {
       alert("At least one type of Character needs to be selected")
     } 
-    console.log(chosenCharArray)
-    
+  console.log(chosenCharArray);
+  
+  // For loop to random every Character
+  for (let i = 0; i < passwordLengthNumber; i++ ) {
+    let randomArray = chosenCharArray[Math.floor(Math.random() * chosenCharArray.length)]
+
+    let randomCharacter = randomArray[Math.floor(Math.random() * randomArray.length)]
+
+    passwordArray.push(randomCharacter);
+  }
+
   // Create a variable to store Password
-  var password = "hello";
+  var password = passwordArray.join('');
 
   // Return Password
   return password;
