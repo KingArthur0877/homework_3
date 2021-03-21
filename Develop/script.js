@@ -111,7 +111,6 @@ function generatePassword() {
   console.log(passwordLengthNumber)
 
   if (passwordLength > 8 && passwordLength < 128) {
-    console.log("Hurray");
     // Confirm whether Password contains lowercase Characters
     isLowerCase = confirm(
       "Do you want your password to contain lowercase characters?"
@@ -149,7 +148,7 @@ function generatePassword() {
   if (isSpecialChar) {
       chosenCharArray.push(specialCharArray);
     } 
-  if (!lowerCaseArray && !isUpperCase && !isNumericChar && !isSpecialChar) {
+  if (!isLowerCase && !isUpperCase && !isNumericChar && !isSpecialChar) {
       alert("At least one type of Character needs to be selected")
     } 
   console.log(chosenCharArray);
